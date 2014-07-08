@@ -3,13 +3,27 @@
 
     "name": "Chrome Chatter Bookmark",
     "description": "Share link to Chatter",
-    "version": "1.0",
+    "version": "1.0.0",
 
-//    "permissions": [
-//        "https://secure.flickr.com/"
-//    ],
+    "permissions": [
+        "tabs",
+        "https://login.salesforce.com/*",
+        "https://*.salesforce.com/services/*"
+    ],
 
     "options_page": "options.html",
+
+    "background": {
+        "page" : "background.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["https://login.salesforce.com/services/oauth2/success*"],
+            "js": ["src/oauth2_inject.js"],
+            "run_at": "document_start"
+        }
+    ],
 
     "browser_action": {
         "default_icon": "icon.png",

@@ -19,15 +19,27 @@
 <body>
 
 <div class="container">
+    <h1>Setting</h1>
     <div class="row">
-        <div class="col-md-12">
-            <button id="login" class="btn btn-primary">Chatter Login</button>
+        <div id="not_logged_in">
+            <form role="form">
+                <button id="login" class="btn btn-primary">Chatter Login</button>
+            </form>
+        </div>
+        <div id="logged_in">
+            logged in by
+            <form role="form">
+                <button id="logout" class="btn btn-danger">Chatter Logout</button>
+            </form>
         </div>
     </div>
 </div>
 
 <script src="lib/jquery-2.1.1.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>
+<script src="lib/forcetk.js"></script>
+<script src="src/chatter.js"></script>
+<script src="src/config.js"></script>
 <script src="src/options.js"></script>
 
 </body>
