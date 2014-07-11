@@ -4,6 +4,7 @@ var chatter = (function(){
     var client_id    = '3MVG9A2kN3Bn17hsXCLd3JHayKA_4lVHkqfvD.R4Ut3k4Haw7idK3YGmkX7XrxAKlNqqS0svqtIgT0uG3qThc';
     var redirect_uri = 'https://login.salesforce.com/services/oauth2/success';
     var state        = "Chrome_Chatter_Bookmark";
+    var version      = "v30.0";
 
     // public methods
     function openAuthorizePage(){
@@ -12,12 +13,18 @@ var chatter = (function(){
         })
     }
 
+    function getCurrentUserInfo(callback){
+        var client = createClient();
+        client.ajax(version + "/chatter/users/me", callback);
+    }
+
     function isLoggedIn(){
-        return config.getAccessToken().length > 0;
+        return config.getAccessToken().length > 0 && config.getInstanceUrl().length > 0;
     }
 
     return {
-        openAuthorizePage: openAuthorizePage,
+        openAuthorizePage:  openAuthorizePage,
+        getCurrentUserInfo: getCurrentUserInfo,
         isLoggedIn: isLoggedIn
     };
 
@@ -30,6 +37,9 @@ var chatter = (function(){
     }
 
     function createClient(){
-        return new forcetk.Client(client_id, login_url);
+        var client = new forcetk.Client(client_id, login_url);
+        client.proxyUrl = null;
+        client.setSessionToken(config.getAccessToken(), null, config.getInstanceUrl());
+        return client;
     }
 }());
