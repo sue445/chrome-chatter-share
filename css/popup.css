@@ -1,4 +1,6 @@
 body {
-    min-width: 600px;
-    overflow-x: hidden;
+    min-width:     600px;
+    overflow-x:    hidden;
+    margin-top:    20px;
+    margin-bottom: 20px;
 }
