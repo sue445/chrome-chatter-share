@@ -1,5 +1,5 @@
 var showAlert = function(args){
-    $("#alert").empty();
+    $("#alert_area").empty();
 
     var close_button = $("<button/>").addClass("close").attr("data-dismiss", "alert");
     $("<span/>").attr("aria-hidden", "true").html("&times;").appendTo(close_button);
@@ -13,7 +13,7 @@ var showAlert = function(args){
     }
 
     $("<span/>").text(" " + args.message).appendTo(alert);
-    alert.appendTo($("#alert"));
+    alert.appendTo($("#alert_area"));
 };
 
 $(function(){
@@ -22,12 +22,12 @@ $(function(){
     });
 
     if(chatter.isLoggedIn()){
-        $("#not_logged_in").hide();
+        $("#not_logged_in_area").hide();
         chatter.getCurrentUserInfo(function(user){
             $("#username").text(user.username);
         });
     } else{
-        $("#logged_in").hide();
+        $("#logged_in_area").hide();
     }
 
     chrome.tabs.query({active: true}, function(tabs){

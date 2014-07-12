@@ -9,11 +9,11 @@ $(function(){
     });
 
     if(chatter.isLoggedIn()){
-        $("#not_logged_in").hide();
+        $("#not_logged_in_area").hide();
         chatter.getCurrentUserInfo(function(user){
             $("#username").text(user.username);
         });
     } else{
-        $("#logged_in").hide();
+        $("#logged_in_area").hide();
     }
 });
