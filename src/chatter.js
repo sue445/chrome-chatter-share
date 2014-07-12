@@ -3,7 +3,7 @@ var chatter = (function(){
     var login_url    = 'https://login.salesforce.com/';
     var client_id    = '3MVG9A2kN3Bn17hsXCLd3JHayKA_4lVHkqfvD.R4Ut3k4Haw7idK3YGmkX7XrxAKlNqqS0svqtIgT0uG3qThc';
     var redirect_uri = 'https://login.salesforce.com/services/oauth2/success';
-    var state        = "Chrome_Chatter_Bookmark";
+    var state        = "Chrome_Chatter_Share";
     var version      = "/v30.0";
 
     // public methods

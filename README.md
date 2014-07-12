@@ -1,1 +1,1 @@
-# Chrome Chatter Bookmark Extension
+# Chrome Chatter Share Extension

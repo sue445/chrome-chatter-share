@@ -6,8 +6,8 @@
 
 // This script serves as an intermediary between the the oauth result and our processing of it.
 
-var state = "Chrome_Chatter_Bookmark";
-var login_success_action = "Chrome_Chatter_Bookmark_login_success";
+var state = "Chrome_Chatter_Share";
+var login_success_action = "Chrome_Chatter_Share_login_success";
 
 // Get all ? params from this URL
 var url = window.location.href;
