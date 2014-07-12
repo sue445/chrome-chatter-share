@@ -4,7 +4,7 @@ var chatter = (function(){
     var client_id    = '3MVG9A2kN3Bn17hsXCLd3JHayKA_4lVHkqfvD.R4Ut3k4Haw7idK3YGmkX7XrxAKlNqqS0svqtIgT0uG3qThc';
     var redirect_uri = 'https://login.salesforce.com/services/oauth2/success';
     var state        = "Chrome_Chatter_Bookmark";
-    var version      = "v30.0";
+    var version      = "/v30.0";
 
     // public methods
     function openAuthorizePage(){
@@ -18,14 +18,51 @@ var chatter = (function(){
         client.ajax(version + "/chatter/users/me", callback);
     }
 
+    function getCurrentUserGroups(callback){
+        var client = createClient();
+        client.ajax(version + "/chatter/users/me/groups", callback);
+    }
+
+    function postLink(args){
+        args.successCallback = args.successCallback || function(){};
+        args.errorCallback   = args.errorCallback   || function(){};
+
+        var payload = {
+            attachment: {
+                attachmentType: "Link",
+                url:            args.url,
+                urlName:        args.title
+            },
+            body: {
+                messageSegments: [
+                    {
+                        type: "Text",
+                        text: args.comment
+                    }
+                ]
+            }
+        };
+
+        var client = createClient();
+        client.ajax(
+            version + "/chatter/feeds/record/"+ args.group_id + "/feed-items",
+            args.successCallback,
+            args.errorCallback,
+            "POST",
+            JSON.stringify(payload)
+        );
+    }
+
     function isLoggedIn(){
         return config.getAccessToken().length > 0 && config.getInstanceUrl().length > 0;
     }
 
     return {
-        openAuthorizePage:  openAuthorizePage,
-        getCurrentUserInfo: getCurrentUserInfo,
-        isLoggedIn: isLoggedIn
+        openAuthorizePage:    openAuthorizePage,
+        getCurrentUserInfo:   getCurrentUserInfo,
+        getCurrentUserGroups: getCurrentUserGroups,
+        postLink:             postLink,
+        isLoggedIn:           isLoggedIn
     };
 
     // private methods
