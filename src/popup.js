@@ -16,6 +16,10 @@ var showAlert = function(args){
     alert.appendTo($("#alert_area"));
 };
 
+var isShareableUrl = function(url){
+    return url.match(/^https?/);
+};
+
 $(function(){
     $("#login").click(function(){
         chatter.openAuthorizePage();
@@ -32,15 +36,15 @@ $(function(){
 
     chrome.tabs.query({active: true}, function(tabs){
         var current_tab = tabs[0];
-        if(current_tab.url.match(/^chrome:/)){
-            $("#title").val("");
-            $("#url").val("");
-            $("#share").attr("disabled", "disabled");
-        } else{
+
+        if(isShareableUrl(current_tab.url)){
             $("#title").val(current_tab.title);
             $("#url").val(current_tab.url);
             $("#share").removeAttr("disabled");
-            $("#comment").focus();
+        } else{
+            $("#unshareable_area").show();
+            $("#logged_in_area").hide();
+            $("#not_logged_in_area").hide();
         }
     });
 
