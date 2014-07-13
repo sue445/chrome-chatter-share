@@ -21,10 +21,6 @@ if (url.indexOf(state) > 0) {
     // Also append the current URL to the params
     query_string += '&from=' + encodeURIComponent(url);
 
-    // Redirect back to the extension itself so that we have priveleged
-    // access again
-    var redirect = chrome.extension.getURL('oauth_result.html');
-
     chrome.extension.sendMessage({action: login_success_action, query_string : query_string}, function(success) {
         // console.log("Got a login response success result of: " + success);
         if (success) {

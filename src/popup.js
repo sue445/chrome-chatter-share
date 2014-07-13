@@ -60,7 +60,7 @@ $(function(){
             url:      $("#url").val(),
             title:    $("#title").val(),
             comment:  $("#comment").val(),
-            successCallback: function(feed_item){
+            successCallback: function(){
                 $("#url").val("");
                 $("#title").val("");
                 $("#comment").val("");
@@ -70,7 +70,7 @@ $(function(){
                     caption:     "Success",
                     message:     "Successful in post"
                 });
-            }, errorCallback: function(jqXHR, textStatus, errorThrown){
+            }, errorCallback: function(jqXHR){
                 showAlert({
                     alert_class: "alert-warning",
                     caption:     jqXHR.statusText,
