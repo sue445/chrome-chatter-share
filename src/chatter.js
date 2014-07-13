@@ -10,7 +10,7 @@ var chatter = (function(){
     function openAuthorizePage(){
         chrome.tabs.create({
             url: getAuthorizeUrl(login_url, client_id, redirect_uri)
-        })
+        });
     }
 
     function getCurrentUserInfo(callback){
