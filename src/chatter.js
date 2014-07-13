@@ -67,8 +67,8 @@ var chatter = (function(){
 
     // private methods
     function getAuthorizeUrl(login_url, client_id, redirect_uri){
-        return login_url+'services/oauth2/authorize?display=page&response_type=token&client_id=' + escape(client_id) +
-            '&redirect_uri='+escape(redirect_uri) +'&state=' + state;
+        return login_url+'services/oauth2/authorize?display=page&response_type=token&client_id=' + encodeURIComponent(client_id) +
+            '&redirect_uri='+encodeURIComponent(redirect_uri) +'&state=' + state;
     }
 
     function createClient(){
