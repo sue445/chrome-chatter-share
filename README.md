@@ -13,4 +13,4 @@ Share link to [Chatter](https://www.salesforce.com/chatter/) via Chrome extensio
 ## ScreenShots
 ![login](https://cloud.githubusercontent.com/assets/608755/3572255/ee7a6b16-0b65-11e4-896c-3efc235fcb90.png)
  
-![popup](https://cloud.githubusercontent.com/assets/608755/3572254/ec14ff6c-0b65-11e4-8ae0-33bb7797e074.png)
+![popip animation](https://cloud.githubusercontent.com/assets/608755/3572332/d4ea5bb0-0b66-11e4-8f3e-c793a28bf794.gif)
