@@ -17,10 +17,13 @@ Share link to [Chatter](https://www.salesforce.com/chatter/) via Chrome extensio
 
 ## Changelog
 ### master
-[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.0...master)
+[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.1...master)
+
+### 1.0.1 (2014/07/16)
+[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.0...1.0.1)
 
 * Get groups of as much as possible
   * https://github.com/sue445/chrome-chatter-share/pull/8
 
-### 1.0.0
+### 1.0.0 (2014/07/15)
 * first release
