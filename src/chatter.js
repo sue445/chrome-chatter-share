@@ -5,6 +5,7 @@ var chatter = (function(){
     var redirect_uri = 'https://login.salesforce.com/services/oauth2/success';
     var state        = "Chrome_Chatter_Share";
     var version      = "/v30.0";
+    var max_page_size = 250;
 
     // public methods
     function openAuthorizePage(){
@@ -20,7 +21,7 @@ var chatter = (function(){
 
     function getCurrentUserGroups(callback){
         var client = createClient();
-        client.ajax(version + "/chatter/users/me/groups", callback);
+        client.ajax(version + "/chatter/users/me/groups?pageSize=" + max_page_size, callback);
     }
 
     function postLink(args){
