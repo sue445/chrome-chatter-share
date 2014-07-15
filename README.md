@@ -16,5 +16,9 @@ Share link to [Chatter](https://www.salesforce.com/chatter/) via Chrome extensio
 ![popup animation](https://cloud.githubusercontent.com/assets/608755/3572332/d4ea5bb0-0b66-11e4-8f3e-c793a28bf794.gif)
 
 ## Changelog
+### master
+* Get groups of as much as possible
+  * https://github.com/sue445/chrome-chatter-share/pull/8
+
 ### 1.0.0
 * first release
