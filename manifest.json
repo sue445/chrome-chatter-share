@@ -3,7 +3,7 @@
 
     "name": "Chrome Chatter Share",
     "description": "Share link to Chatter via Chrome extension",
-    "version": "1.0.0",
+    "version": "1.0.1",
 
     "icons": {
         "48"  : "img/icon_48.png",
