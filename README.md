@@ -17,7 +17,13 @@ Share link to [Chatter](https://www.salesforce.com/chatter/) via Chrome extensio
 
 ## Changelog
 ### master
-[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.1...master)
+[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.2...master)
+
+### 1.0.2 (2014/07/18)
+[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.1...1.0.2)
+
+* When 401 error, refresh access_token and retry
+  * https://github.com/sue445/chrome-chatter-share/pull/11
 
 ### 1.0.1 (2014/07/16)
 [full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.0...1.0.1)
