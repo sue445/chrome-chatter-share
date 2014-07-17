@@ -80,6 +80,7 @@ var chatter = (function(){
         var client = new forcetk.Client(client_id, login_url);
         client.proxyUrl = null;
         client.setSessionToken(config.getAccessToken(), null, config.getInstanceUrl());
+        client.setRefreshToken(config.getRefreshToken());
         return client;
     }
 }());
