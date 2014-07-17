@@ -4,7 +4,8 @@ var chatter = (function(){
     var client_id     = '3MVG9A2kN3Bn17hsXCLd3JHayKA_4lVHkqfvD.R4Ut3k4Haw7idK3YGmkX7XrxAKlNqqS0svqtIgT0uG3qThc';
     var redirect_uri  = 'https://login.salesforce.com/services/oauth2/success';
     var state         = "Chrome_Chatter_Share";
-    var version       = "/v30.0";
+    var version       = "v30.0";
+    var api_prefix    = "/" + version;
     var max_page_size = 250;
 
     // public methods
@@ -16,12 +17,12 @@ var chatter = (function(){
 
     function getCurrentUserInfo(callback){
         var client = createClient();
-        client.ajax(version + "/chatter/users/me", callback);
+        client.ajax(api_prefix + "/chatter/users/me", callback);
     }
 
     function getCurrentUserGroups(callback){
         var client = createClient();
-        client.ajax(version + "/chatter/users/me/groups?pageSize=" + max_page_size, callback);
+        client.ajax(api_prefix + "/chatter/users/me/groups?pageSize=" + max_page_size, callback);
     }
 
     function postLink(args){
@@ -46,7 +47,7 @@ var chatter = (function(){
 
         var client = createClient();
         client.ajax(
-            version + "/chatter/feeds/record/"+ args.group_id + "/feed-items",
+            api_prefix + "/chatter/feeds/record/"+ args.group_id + "/feed-items",
             args.successCallback,
             args.errorCallback,
             "POST",
@@ -68,14 +69,19 @@ var chatter = (function(){
 
     // private methods
     function getAuthorizeUrl(login_url, client_id, redirect_uri){
-        return login_url+'services/oauth2/authorize?display=page&response_type=token&client_id=' + encodeURIComponent(client_id) +
-            '&redirect_uri='+encodeURIComponent(redirect_uri) +'&state=' + state;
+        return login_url+'services/oauth2/authorize?'+
+            'display=page'+
+            '&response_type=token' +
+            '&client_id=' + encodeURIComponent(client_id) +
+            '&redirect_uri='+encodeURIComponent(redirect_uri) +
+            '&state=' + state;
     }
 
     function createClient(){
         var client = new forcetk.Client(client_id, login_url);
         client.proxyUrl = null;
-        client.setSessionToken(config.getAccessToken(), null, config.getInstanceUrl());
+        client.setSessionToken(config.getAccessToken(), version, config.getInstanceUrl());
+        client.setRefreshToken(config.getRefreshToken());
         return client;
     }
 }());
