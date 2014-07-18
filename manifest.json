@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "Chatter Share for Google Chrome™",
-    "description": "Share link to Salesforce Chatter™ via Google Chrome™",
+    "description": "Share link to Salesforce Chatter™ for Google Chrome™",
     "version": "1.0.2",
 
     "icons": {
