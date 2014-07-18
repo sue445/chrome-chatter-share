@@ -1,5 +1,5 @@
-# Chrome Chatter Share Extension
-Share link to [Chatter](https://www.salesforce.com/chatter/) via Chrome extension
+# Chatter Share for Google Chrome™
+Share link to [Salesforce Chatter™](https://www.salesforce.com/chatter/) for Google Chrome™
 
 [![Code Climate](https://codeclimate.com/github/sue445/chrome-chatter-share.png)](https://codeclimate.com/github/sue445/chrome-chatter-share)
 
@@ -22,6 +22,7 @@ Share link to [Chatter](https://www.salesforce.com/chatter/) via Chrome extensio
 ### 1.0.2 (2014/07/18)
 [full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.1...1.0.2)
 
+* Rename app name for Branding Guidelines
 * When 401 error, refresh access_token and retry
   * https://github.com/sue445/chrome-chatter-share/pull/11
 
