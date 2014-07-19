@@ -12,9 +12,8 @@ $(function(){
             var access_token  = getQueryValue(request.query_string, "access_token");
             var refresh_token = getQueryValue(request.query_string, "refresh_token");
             var instance_url  = getQueryValue(request.query_string, "instance_url");
-            config.setAccessToken(access_token);
+            config.saveAuthentication(access_token, instance_url);
             config.setRefreshToken(refresh_token);
-            config.setInstanceUrl(instance_url);
             sendResponse("success");
         }
     });

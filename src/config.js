@@ -12,15 +12,12 @@ var config= (function(){
         return localStorage.instance_url || "";
     }
 
-    function setAccessToken(access_token){
-        localStorage.access_token = access_token;
-    }
-
     function setRefreshToken(refresh_token){
         localStorage.refresh_token = refresh_token;
     }
 
-    function setInstanceUrl(instance_url){
+    function saveAuthentication(access_token, instance_url){
+        localStorage.access_token = access_token;
         localStorage.instance_url = instance_url;
     }
 
@@ -31,13 +28,12 @@ var config= (function(){
     }
 
     return {
-        getAccessToken:  getAccessToken,
-        getRefreshToken: getRefreshToken,
-        getInstanceUrl:  getInstanceUrl,
-        setAccessToken:  setAccessToken,
-        setRefreshToken: setRefreshToken,
-        setInstanceUrl:  setInstanceUrl,
-        removeAuth:      removeAuth
+        getAccessToken:     getAccessToken,
+        getRefreshToken:    getRefreshToken,
+        getInstanceUrl:     getInstanceUrl,
+        saveAuthentication: saveAuthentication,
+        setRefreshToken:    setRefreshToken,
+        removeAuth:         removeAuth
     };
 
     // private methods
