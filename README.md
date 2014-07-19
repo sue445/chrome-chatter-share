@@ -19,6 +19,8 @@ Share link to [Salesforce Chatter™](https://www.salesforce.com/chatter/) for G
 ### master
 [full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.2...master)
 
+* Some refactorings
+
 ### 1.0.2 (2014/07/18)
 [full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.1...1.0.2)
 
