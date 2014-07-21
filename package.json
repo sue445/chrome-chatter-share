@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sue445/chrome-chatter-share/issues"
   },
-  "homepage": "https://github.com/sue445/chrome-chatter-share"
+  "homepage": "https://github.com/sue445/chrome-chatter-share",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
 }
