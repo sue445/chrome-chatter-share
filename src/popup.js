@@ -80,4 +80,8 @@ $(function(){
     $("#share").click(function(){
         postLink();
     });
+
+    shortcut.add("Shift+Enter",function() {
+        postLink();
+    });
 });
