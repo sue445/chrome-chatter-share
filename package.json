@@ -1,0 +1,19 @@
+{
+  "name": "chrome-chatter-share",
+  "version": "1.0.3",
+  "description": "Share link to Salesforce Chatter™ for Google Chrome™",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sue445/chrome-chatter-share.git"
+  },
+  "author": "sue445",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sue445/chrome-chatter-share/issues"
+  },
+  "homepage": "https://github.com/sue445/chrome-chatter-share"
+}
