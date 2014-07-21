@@ -20,6 +20,32 @@ var isShareableUrl = function(url){
     return url.match(/^https?/);
 };
 
+var postLink = function(){
+    chatter.postLink({
+        group_id: $("#group").val(),
+        url:      $("#url").val(),
+        title:    $("#title").val(),
+        comment:  $("#comment").val(),
+        successCallback: function(){
+            $("#url").val("");
+            $("#title").val("");
+            $("#comment").val("");
+
+            showAlert({
+                alert_class: "alert-success",
+                caption:     "Success",
+                message:     "Successful in post"
+            });
+        }, errorCallback: function(jqXHR){
+            showAlert({
+                alert_class: "alert-warning",
+                caption:     jqXHR.statusText,
+                message:     jqXHR.responseJSON[0].message
+            });
+        }
+    });
+};
+
 $(function(){
     $("#login").click(function(){
         chatter.openAuthorizePage();
@@ -52,28 +78,6 @@ $(function(){
     });
 
     $("#share").click(function(){
-        chatter.postLink({
-            group_id: $("#group").val(),
-            url:      $("#url").val(),
-            title:    $("#title").val(),
-            comment:  $("#comment").val(),
-            successCallback: function(){
-                $("#url").val("");
-                $("#title").val("");
-                $("#comment").val("");
-
-                showAlert({
-                    alert_class: "alert-success",
-                    caption:     "Success",
-                    message:     "Successful in post"
-                });
-            }, errorCallback: function(jqXHR){
-                showAlert({
-                    alert_class: "alert-warning",
-                    caption:     jqXHR.statusText,
-                    message:     jqXHR.responseJSON[0].message
-                });
-            }
-        });
+        postLink();
     });
 });
