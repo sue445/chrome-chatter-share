@@ -1,10 +1,12 @@
 module.exports = function(grunt) {
+    var manifest = grunt.file.readJSON("manifest.json");
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         'chrome-extension': {
             options: {
                 name: "chrome-chatter-share",
-                version: "1.0.3",
+                version: manifest.version,
                 id: "aehgkgapfagaljikampcebpacdcpkbfc",
                 chrome: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
                 clean: true,
@@ -21,10 +23,31 @@ module.exports = function(grunt) {
                     "README.md"
                 ]
             }
+        },
+        gittag: {
+            append: {
+                options: {
+                    tag: manifest.version,
+                    message: "release v" + manifest.version
+                }
+            }
+        },
+        gitpush: {
+            tag: {
+                options: {
+                    tags: true
+                }
+            },
+            master: {
+                options: {
+                    branch: "master"
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-chrome-compile');
+    grunt.loadNpmTasks('grunt-git');
 
     grunt.registerTask('default', ["chrome-extension"]);
 };
