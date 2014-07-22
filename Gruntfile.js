@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             }
         },
         gittag: {
-            append: {
+            new_version: {
                 options: {
                     tag: manifest.version,
                     message: "release v" + manifest.version
@@ -49,5 +49,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-chrome-compile');
     grunt.loadNpmTasks('grunt-git');
 
-    grunt.registerTask('default', ["chrome-extension"]);
+    grunt.registerTask('default', ["chrome-extension", "gittag:new_version", "gitpush:tag", "gitpush:master"]);
 };
