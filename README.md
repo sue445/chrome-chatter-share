@@ -19,6 +19,9 @@ Share link to [Salesforce Chatter™](https://www.salesforce.com/chatter/) for G
 ### master
 [full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.3...master)
 
+* bugfix: when open multi window, show other url and title
+  * https://github.com/sue445/chrome-chatter-share/issues/14
+
 ### 1.0.3 (2014/07/22)
 [full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.2...1.0.3)
 

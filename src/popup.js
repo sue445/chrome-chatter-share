@@ -57,7 +57,7 @@ $(function(){
         $("#logged_in_area").hide();
     }
 
-    chrome.tabs.query({active: true}, function(tabs){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         var current_tab = tabs[0];
 
         if(isShareableUrl(current_tab.url)){
