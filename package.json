@@ -1,6 +1,6 @@
 {
   "name": "chrome-chatter-share",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Share link to Salesforce Chatter™ for Google Chrome™",
   "main": "index.js",
   "scripts": {

@@ -3,7 +3,7 @@
 
     "name": "Chatter Share for Google Chrome™",
     "description": "Share link to Salesforce Chatter™ for Google Chrome™",
-    "version": "1.0.3",
+    "version": "1.0.4",
 
     "icons": {
         "48"  : "img/icon_48.png",
