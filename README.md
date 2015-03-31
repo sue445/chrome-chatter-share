@@ -17,7 +17,13 @@ Share link to [Salesforce Chatter™](https://www.salesforce.com/chatter/) for G
 
 ## Changelog
 ### master
-[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.4...master)
+[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.5...master)
+
+### 1.0.5 (2015/04/01)
+[full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.4...1.0.5)
+
+* disable pulldown while loading group
+  * https://github.com/sue445/chrome-chatter-share/pull/16
 
 ### 1.0.4 (2014/07/31)
 [full changelog](https://github.com/sue445/chrome-chatter-share/compare/1.0.3...1.0.4)
