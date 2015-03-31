@@ -71,10 +71,12 @@ $(function(){
         }
     });
 
+    $("#group").attr({disabled: "disabled"});
     chatter.getCurrentUserGroups(function(user_group_page){
         $.each(user_group_page.groups, function(i, group){
             $("<option>").val(group.id).text(group.name).appendTo($("#group"));
         });
+        $("#group").removeAttr("disabled");
     });
 
     $("#share").click(function(){
